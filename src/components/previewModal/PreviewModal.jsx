@@ -22,7 +22,8 @@ const PreviewModal = ({meme, response, showModal, setShowModal}) => {
 	}
 
 	return (
-		<Modal show={showModal} centered onHide={() => setShowModal(false)}>
+		<Modal show={showModal} centered backdrop="static" onHide={() => setShowModal(false)}>
+			<Modal.Header closeButton><h3 className="lead">{meme.name}</h3></Modal.Header>
 			<Modal.Body>
 				{data.success
 					?

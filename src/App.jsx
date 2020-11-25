@@ -16,9 +16,8 @@ function App() {
 
   return (
     <div className="container">
-      <Header />
 
-      <div className="row">
+      <div className="row mt-5">
         <div className="col">
           <MemeSelector setMeme={setMeme}/>
           <Settings 

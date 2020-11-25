@@ -13,6 +13,8 @@
 .image-icon,
 .nm-canvas {
   width: 100%;
+  position: relative;
+  top: 40px;
 }
 
 #share-buttons img {

@@ -15,8 +15,12 @@ const MemeSelector = ({setMeme}) => {
 	}
 
 	return (
-		<div className="container-images mb-4">
-			{memes.map((meme, index) => <Button variant="light" key={index} data-meme={JSON.stringify(meme)} onClick={handleSelection}><img className="image-icon" data-meme={JSON.stringify(meme)} src={meme.url} alt={meme.name} onClick={handleSelection} /></Button>)}				
+		<div>
+			<span>Pick a meme:</span>
+			<hr />
+			<div className="container-images mb-5">
+				{memes.map((meme, index) => <Button variant="light" key={index} data-meme={JSON.stringify(meme)} onClick={handleSelection}><img className="image-icon" data-meme={JSON.stringify(meme)} src={meme.url} alt={meme.name} onClick={handleSelection} /></Button>)}				
+			</div>
 		</div>
 	)
 };
