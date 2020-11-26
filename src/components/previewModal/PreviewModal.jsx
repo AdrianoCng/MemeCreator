@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Modal, Alert, Button} from 'react-bootstrap';
 import facebookLogo from '../../img/facebook.png';
 import twitterLogo from '../../img/twitter.png';
@@ -14,8 +14,7 @@ const PreviewModal = ({meme, response, showModal, setShowModal}) => {
 		urlMeme.select();
 
 		try {
-			const successful = document.execCommand("copy");
-			const msg = successful ? "successful" : "unsuccessful";
+			document.execCommand("copy");
 		} catch (err) {
 			console.log(err)
 		}
@@ -23,7 +22,8 @@ const PreviewModal = ({meme, response, showModal, setShowModal}) => {
 
 	return (
 		<Modal show={showModal} centered backdrop="static" onHide={() => setShowModal(false)}>
-			<Modal.Header closeButton><h3 className="lead">{meme.name}</h3></Modal.Header>
+			<Modal.Header closeButton>
+				<h3 className="lead">{meme.name}</h3></Modal.Header>
 			<Modal.Body>
 				{data.success
 					?
@@ -34,7 +34,7 @@ const PreviewModal = ({meme, response, showModal, setShowModal}) => {
 					</Alert>
 				}
 			</Modal.Body>
-			<Modal.Footer>
+			<Modal.Footer className="justify-content-center">
 				{data.success && 
 					<div>
 						<div id="share-buttons">
@@ -51,12 +51,14 @@ const PreviewModal = ({meme, response, showModal, setShowModal}) => {
 							<a href={`http://www.linkedin.com/shareArticle?mini=true&url=${data.data.url}`} target="_blank">
 								<img src={linkedinLogo} alt="LinkedIn" />
 							</a>
-							<button className="ml-2 btn btn-sm" onClick={copyLink}>
+							<button className="btn btn-sm" onClick={copyLink}>
 								Copy link
 								<img src={copyLinkLogo} alt="CopyLink" />
 							</button>
 						</div>
-						<input type="text" id="url-generated-meme" readOnly value={data.data.url}/>
+						<div className="d-flex justify-content-center">
+							<input type="text" id="url-generated-meme" readOnly value={data.data.url}/>
+						</div>
 					</div>}
 			</Modal.Footer>
 		</Modal>

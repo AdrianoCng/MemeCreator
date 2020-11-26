@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import Header from './components/header/Header';
+import Navbar from 'react-bootstrap/Navbar';
 import Canvas from './components/canvas/Canvas';
 import MemeSelector from './components/memeSelector/MemeSelector';
 import Settings from './components/settings/Settings';
 import PreviewModal from './components/previewModal/PreviewModal';
+import logo from './img/memeFace.jpg';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -15,22 +16,36 @@ function App() {
 
 
   return (
-    <div className="container">
+    <>
+      <div className="container-fluid">
+        <Navbar className="justify-content-center">
+          <Navbar.Brand>
+            <img src={logo} alt="logo" height="52"/>
+          </ Navbar.Brand>
 
-      <div className="row mt-5">
-        <div className="col">
-          <MemeSelector setMeme={setMeme}/>
-          <Settings 
-          meme={meme} 
-          setResponse={setResponse} 
-          setShowModal={setShowModal}
-          />
-        </div>
+          <Navbar.Brand className="img-fluid">
+            <h1 className="logo-text">Meme<span className="text-danger display-4 logo-text">Creator</span></h1>
+          </ Navbar.Brand>
+        </Navbar>
+      </div>
+      
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-6 col-12">
+            <MemeSelector setMeme={setMeme}/>
+            <Settings 
+            meme={meme} 
+            setResponse={setResponse} 
+            setShowModal={setShowModal}
+            />
+          </div>
 
-        <div className="col">
-          <Canvas meme={meme}/>
+          <div className="col-sm-6 col-12">
+            <Canvas meme={meme}/>
+          </div>
         </div>
       </div>
+      
 
       <PreviewModal 
       response={response}
@@ -38,7 +53,7 @@ function App() {
       showModal={showModal}
       meme={meme}
       />
-    </div>
+    </>
   );
 }
 

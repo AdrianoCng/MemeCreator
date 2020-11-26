@@ -24,6 +24,9 @@ const Settings = ({meme, setResponse, setShowModal}) => {
 		.then(res => {
 			setResponse(res);
 			setShowModal(true);
+
+			document.getElementById("form").reset();
+			setParams(null);
 		})
 		.catch(err => console.log(err));
 	};

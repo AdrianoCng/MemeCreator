@@ -15,7 +15,7 @@ const Canvas = ({meme}) => {
 	});
 
 	return (
-		<canvas id="canvas" width={width} height={height} className="nm-canvas"></canvas>
+		<canvas id="canvas" width={width} height={height} className="nm-canvas position-relative-top"></canvas>
 	)
 };
 
