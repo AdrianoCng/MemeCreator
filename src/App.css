@@ -10,8 +10,27 @@ body {
   grid-gap: 10px;
 }
 
+/* scrollbar */
 .container-images::-webkit-scrollbar {
-  display: none;
+  width: 14px;
+  background-color: #ddd;
+  border-radius: 10px;
+}
+
+.container-images::-webkit-scrollbar:hover {
+  background-color: #ccc;
+}
+
+/* Scrollbard Handle */
+.container-images::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: inset 0 0 5px#aaa;
+  height: 15%;
+}
+
+.container-images::-webkit-scrollbar-thumb:hover {
+  box-shadow: inset 0 0 5px #777;
 }
 
 .image-icon,
@@ -73,5 +92,9 @@ body {
     height: 400px;
     overflow-y: scroll;
     grid-gap: 10px;
+  }
+
+  .container-images::-webkit-scrollbar {
+    width: 10px;
   }
 }
