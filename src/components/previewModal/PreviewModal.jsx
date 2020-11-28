@@ -39,16 +39,16 @@ const PreviewModal = ({meme, response, showModal, setShowModal}) => {
 					<div>
 						<div id="share-buttons">
 							<span className="mr-2 text-muted">Share</span>
-							<a href={`http://www.facebook.com/sharer.php?u=${data.data.url}`} target="_blank">
+							<a href={`http://www.facebook.com/sharer.php?u=${data.data.url}`} target="_blank" rel="noreferrer">
 								<img src={facebookLogo} alt="Facebook" />
 							</a>
-							<a href={`https://twitter.com/share?url=${data.data.url}`} target="_blank">
+							<a href={`https://twitter.com/share?url=${data.data.url}`} target="_blank" rel="noreferrer">
 								<img src={twitterLogo} alt="Twitter" />
 							</a>
-							<a href={`http://reddit.com/submit?url=${data.data.url}`} target="_blank">
+							<a href={`http://reddit.com/submit?url=${data.data.url}`} target="_blank" rel="noreferrer">
 								<img src={redditLogo} alt="Reddit" />
 							</a>
-							<a href={`http://www.linkedin.com/shareArticle?mini=true&url=${data.data.url}`} target="_blank">
+							<a href={`http://www.linkedin.com/shareArticle?mini=true&url=${data.data.url}`} target="_blank" rel="noreferrer">
 								<img src={linkedinLogo} alt="LinkedIn" />
 							</a>
 							<button className="btn btn-sm" onClick={copyLink}>
