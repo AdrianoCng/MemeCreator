@@ -1,5 +1,5 @@
 import React from 'react';
-import {Modal, Alert, Button} from 'react-bootstrap';
+import {Modal, Alert} from 'react-bootstrap';
 import facebookLogo from '../../img/facebook.png';
 import twitterLogo from '../../img/twitter.png';
 import redditLogo from '../../img/reddit.png';
@@ -16,7 +16,7 @@ const PreviewModal = ({meme, response, showModal, setShowModal}) => {
 		try {
 			document.execCommand("copy");
 		} catch (err) {
-			console.log(err)
+			alert("Copy not supported");
 		}
 	}
 
@@ -30,7 +30,7 @@ const PreviewModal = ({meme, response, showModal, setShowModal}) => {
 					<img src={data.data.url} alt="meme" className="nm-canvas"/>
 					:
 					<Alert variant="danger">
-						Please fill the boxes.
+						Please provide some text for the meme.
 					</Alert>
 				}
 			</Modal.Body>
