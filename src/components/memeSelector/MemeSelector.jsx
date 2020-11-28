@@ -8,6 +8,7 @@ const MemeSelector = ({setMeme}) => {
 	useEffect(() => {
 		axios.get("https://api.imgflip.com/get_memes")
 		.then(res => { setMemes(res.data.data.memes)})
+		.catch(err => alert("Error trying to load memes. Please refresh the page and try again"));
 	}, []);
 
 	const handleSelection = ({target}) => {

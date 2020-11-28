@@ -28,7 +28,10 @@ const Settings = ({meme, setResponse, setShowModal}) => {
 			document.getElementById("form").reset();
 			setParams(null);
 		})
-		.catch(err => console.log(err));
+		.catch(err => {
+			console.log(err);
+			alert("Something went wrong. Please try again");
+		});
 	};
 
 	const handleOnChange = ({target: {name, value}}) => {
