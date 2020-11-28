@@ -1,11 +1,16 @@
 {
-  "short_name": "Meme Creator",
+  "short_name": "MemeCreator",
   "name": "Create your meme",
   "icons": [
     {
-      "src": "favicon-32x32.png",
+      "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "apple-icon-180x180.png",
+      "type": "image/png",
+      "sizes": "180x180"
     }
   ],
   "start_url": ".",
