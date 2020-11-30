@@ -24,7 +24,7 @@ function App() {
           </ Navbar.Brand>
 
           <Navbar.Brand className="img-fluid">
-            <h1 className="logo-text">Meme<span className="text-danger display-4 logo-text">Creator</span></h1>
+            <h1 className="logo-text">Meme<span className="text-danger display-4 logo-text">Generator</span></h1>
           </ Navbar.Brand>
         </Navbar>
       </div>
